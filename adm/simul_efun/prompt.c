@@ -1,5 +1,13 @@
 #include <simul_efun.h>
 
+/**
+ * 
+ * @param input 
+ * @param {BODY_OB} body 
+ * @param attempts 
+ * @param count 
+ * @param cb 
+ */
 private nomask void _password(string input, object body, int attempts, int count, mixed *cb) {
     string current_password ;
     if(!input || input == "") {
@@ -186,6 +194,13 @@ private void _prompt_colour(string input, string prompt, object body, mixed *cb)
     call_back(cb, input) ;
 }
 
+/**
+ * 
+ * @param input 
+ * @param {PLAYER_OB} body 
+ * @param cb 
+ * @param prompt 
+ */
 private void _prompt_256(string input, object body, mixed *cb, string prompt) {
     string *colours ;
     int i ;

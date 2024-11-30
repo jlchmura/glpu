@@ -64,6 +64,10 @@ int is_edible() {
     return _edible ;
 }
 
+/**
+ * 
+ * @param {PLAYER_OB} tp 
+ */
 int consume(object tp) {
     if(!_edible)
         return 0 ;
@@ -91,6 +95,11 @@ int consume(object tp) {
     return 1 ;
 }
 
+/**
+ * 
+ * @param {PLAYER_OB} tp 
+ * @param amount 
+ */
 int nibble(object tp, int amount) {
     if(!_edible)
         return 0 ;

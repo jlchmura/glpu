@@ -534,8 +534,8 @@ protected nomask void cache_response(string file, mixed response) {
     int fs = file_size(file) ;
     int sz = sizeof(response) ;
     int max = get_config(__MAX_BYTE_TRANSFER__) ;
-    int start ;
-    int result ;
+    int start ; 
+    int result ; 
     int x, y ;
 
     _log(3, "Writing to cache file: "+file) ;
@@ -563,7 +563,7 @@ protected nomask mixed read_cache(string file) {
     mixed response = "" ;
     int chunk_size = get_config(__MAX_BYTE_TRANSFER__) ;
     int max = get_config(__MAX_STRING_LENGTH__) ;
-
+ 
     int curr = 0 ;
     int sz = file_size(file) ;
     string input ;

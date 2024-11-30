@@ -50,6 +50,7 @@ void setup_body() {
 }
 
 int revive(string str) {
+    /** @type {PLAYER_OB} */
     object body ;
     string name = query_privs() ;
 
@@ -60,7 +61,7 @@ int revive(string str) {
 
     exec(body, this_object()) ;
 
-    body->setup_body(name) ;
+    body->setup_body() ;
     body->set_dead(0) ;
     body->set_hp(1.0) ;
     body->set_sp(1.0) ;
@@ -81,7 +82,7 @@ int revive(string str) {
 
 void net_dead() {
     if(origin() != ORIGIN_DRIVER)
-        return ;
+        return ; 
 
     if(environment())
         tell_all(environment(), query_name()+ " begins to fade.\n") ;

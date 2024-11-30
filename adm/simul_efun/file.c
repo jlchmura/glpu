@@ -217,7 +217,7 @@ varargs void implode_file(string file, string *lines, int overwrite) {
  * @param {object} ob - The object to query the file name of.
  * @returns {string} - The name of the file corresponding to the object.
  */
-string query_file_name(object ob) {
+varargs string query_file_name(object ob) {
     string file, *parts ;
     string dir ;
 

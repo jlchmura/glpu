@@ -227,20 +227,20 @@ varargs mixed call_if(mixed ob, string func, mixed arg...) {
  * @param {mixed*} cb - The callback to execute after the delay.
  * @returns {int} - The ID of the delayed action.
  */
-varargs int delay_act(string act, float delay, mixed *cb) {
+varargs int delay_act(string action, float delay, mixed *cb) {
   int id ;
   object tp = this_body() ;
 
   if(!tp)
     return null ;
 
-  if(!act || !delay || !cb)
+  if(!action || !delay || !cb)
     return null ;
 
   if(tp->is_acting())
     return 0 ;
 
-  return tp->act(act, delay, cb) ;
+  return tp->act(action, delay, cb) ;
 }
 
 /**

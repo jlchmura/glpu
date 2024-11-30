@@ -33,8 +33,7 @@ float query_effective_level() {
 }
 
 float set_level(float l) {
-    level = to_float(l) ;
-
+    level = to_float(l) ;    
     if(userp()) {
         GMCP_D->send_gmcp(this_object(), GMCP_PKG_CHAR_STATUS, ([
             GMCP_LBL_CHAR_STATUS_XP: xp,

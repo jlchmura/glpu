@@ -9,6 +9,8 @@
 #define M_CURRENCY      DIR_STD_MODULES "currency"
 #define M_CLEAN         DIR_STD_MODULES "clean"
 #define M_EDIBLE        DIR_STD_MODULES "edible"
+// why are there two gmcp modules @gesslar?
+#define M_GMCP_GMCP     DIR_STD_MODULES "gmcp/gmcp_module"
 #define M_GMCP          DIR_STD_MODULES "gmcp"
 #define M_HTTP          DIR_STD_MODULES "http"
 #define M_LOG           DIR_STD_MODULES "log"
@@ -24,7 +26,7 @@
 #define M_SHOP_MENU     DIR_STD_MODULES "shop_menu"
 #define M_UNICODE       DIR_STD_MODULES "unicode"
 #define M_USES          DIR_STD_MODULES "uses"
-
+#define M_MOBILE_BASE   DIR_STD_MODULES_MOBILE "module"
 #define DM_CSS          DIR_DAEMON_MODULES "colour/css"
 
 #endif  // __MODULES_H__

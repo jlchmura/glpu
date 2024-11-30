@@ -64,6 +64,10 @@ int is_potable() {
     return _potable ;
 }
 
+/**
+ * 
+ * @param {PLAYER_OB} tp 
+ */
 int drink(object tp) {
     if(!_potable)
         return 0 ;
@@ -92,6 +96,11 @@ int drink(object tp) {
     return 1 ;
 }
 
+/**
+ * 
+ * @param {PLAYER_OB} tp 
+ * @param amount 
+ */
 int sip(object tp, int amount) {
     if(!_potable)
         return 0 ;

@@ -14,7 +14,7 @@ private nosave int debug_clean = 0 ;
 
 // Functions
 int can_clean_up() ;
-int set_no_clean(int no_clean) ;
+varargs int set_no_clean(int no_clean) ;
 int query_no_clean() ;
 private int clean_up_check(mixed ob) ;
 int request_clean_up() { return 1 ; }

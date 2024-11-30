@@ -77,6 +77,8 @@ protected nosave mapping body_part_modifiers = ([ ]) ;
 
 protected nosave mapping equipment_slots = ([ ]) ;
 
+private string module_name;
+
 void setup() {
     module_name = "race" ;
 }
@@ -85,6 +87,11 @@ string query_race() {
     return replace_string(query_file_name(), "_", " ") ;
 }
 
+/**
+ * 
+ * @param {PLAYER_OB} ob 
+ * @param args 
+ */
 int start_module(object ob, mixed args...) {
     int result ;
 
@@ -231,7 +238,7 @@ int query_body_part_vitalness_modifier(string part) {
  * and is a key in the body_parts mapping. Force is an optional argument that
  * will force the function to forgo the check for membership in the body_parts
  * @param {string} part - the body part to check
- * @param {[int=0]} force - optional, default 0
+ * @param {int} [force=0] force - optional, default 0
  * @returns {int} - 1 if the body part is valid, 0 otherwise
  */
 int valid_body_part(string part, int force: (: 0 :)) {

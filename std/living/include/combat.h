@@ -3,7 +3,7 @@
 
 void combat_round() ;
 int start_attack(object victim) ;
-void swing() ;
+varargs void swing(int count, int multi) ;
 int next_round() ;
 public varargs int can_strike(object enemy, object weapon) ;
 private fail_strike(object enemy, object weapon) ;
@@ -16,6 +16,9 @@ int in_combat() ;
 int seen_enemy(object victim) ;
 int current_enemy(object victim) ;
 mapping current_enemies() ;
+/**
+ * @returns {LIVING_OB}
+ */
 object highest_threat() ;
 object lowest_threat() ;
 object highest_seen_threat() ;

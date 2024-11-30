@@ -37,7 +37,7 @@ varargs string identify(mixed a, string indent) {
     mapping map ;
 
     if(origin() != ORIGIN_LOCAL) {
-        found = ([ ]) ;
+        found = ([ ]) ; 
         position = allocate(MAX_RECURSION + 1) ;
         recursion = 0 ;
         position[recursion] = "X" ;
@@ -46,7 +46,7 @@ varargs string identify(mixed a, string indent) {
     if(stringp(indent))
         for(i = 0 ; i < recursion ; i++)
             ind += indent ;
-    if(undefinedp(a))
+    if(undefinedp(a)) 
         return ind + "UNDEFINED" ;
     if(nullp(a))
         return ind + "0" ;

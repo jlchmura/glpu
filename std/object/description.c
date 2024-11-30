@@ -10,7 +10,7 @@
  */
 
 #include <description.h>
-
+ 
 // Variables
 private mixed short, long ;
 private nosave mapping extra_short = ([ ]), extra_long = ([ ]) ;
@@ -20,6 +20,8 @@ int set_short(mixed str) {
 
     if(environment())
         event(environment(), "gmcp_item_update", environment()) ;
+
+    return 0 ;
 }
 
 string query_short(object viewer: (: this_body() :)) {
@@ -30,7 +32,7 @@ string query_short(object viewer: (: this_body() :)) {
     if(valid_function(result))
         result = (*result)(viewer) ;
     if(!stringp(result))
-        result = 0 ;
+        return 0;
 
     return result ;
 }
@@ -48,8 +50,8 @@ string query_long(object viewer: (: this_body() :)) {
         result = (*result)(viewer) ;
 
     if(!stringp(result))
-        result = 0 ;
-
+        return 0;
+        
     return result ;
 }
 

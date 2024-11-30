@@ -43,7 +43,7 @@ mixed assure_dir(string path) {
  * @param {object} ob - The object to query the directory of.
  * @returns {string} - The directory path of the object.
  */
-string query_directory(object ob) {
+varargs string query_directory(object ob) {
     string file, *parts ;
     string dir ;
 

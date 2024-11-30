@@ -183,3 +183,5 @@ int move(mixed dest) {
     return MOVE_DESTRUCTED ;
   }
 }
+
+int prevent_drop() { return 0; }

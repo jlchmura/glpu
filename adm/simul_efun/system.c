@@ -179,9 +179,9 @@ private nosave mapping _symbols = ([
  * @function _format_message
  * @description Formats a message with a colour and the name of the previous
                 object.
- * @param {string} colour - The colour to use for the message.
+ * @param {string} type - The type of the message
  * @param {string} str - The message to format.
- * @param {mixed} [args] - Optional arguments to format the message.
+ * @param {...mixed} args - Optional arguments to format the message.
  * @returns {string} - The formatted message or null if there is no previous
                        object.
  */
@@ -192,7 +192,7 @@ private string _format_message(string type, string str, mixed args...) {
     int colour_index, tag_index ;
     string final ;
 
-    if(body) {
+    if(body) {        
         if(body->has_screenreader()) {
             colour_index = 1 ;
             tag_index = 2 ;
@@ -223,8 +223,7 @@ private string _format_message(string type, string str, mixed args...) {
  * @description Provides an confirmation message, optionally formatted with
  *              arguments. If no object is provided, the message will be sent
  *              to this_body(). If no object is found, the message will be
- *              sent to the debug log.
- * @param {string} str - The confirmation message.
+ *              sent to the debug log. 
  * @param {mixed} [args] - Optional arguments to format the message.
  * @returns {int} - Always returns 1, unless there is no previous object.
  */
@@ -269,8 +268,7 @@ varargs int _ok(mixed args...) {
  * @description Provides an error message, optionally formatted with
  *              arguments. If no object is provided, the message will be sent
  *              to this_body(). If no object is found, the message will be
- *              sent to the debug log.
- * @param {string} str - The error message.
+ *              sent to the debug log. 
  * @param {mixed} [args] - Optional arguments to format the message.
  * @returns {int} - Always returns 1, unless there is no previous object.
  */
@@ -315,8 +313,7 @@ varargs int _error(mixed args...) {
  * @description Provides an warning message, optionally formatted with
  *              arguments. If no object is provided, the message will be sent
  *              to this_body(). If no object is found, the message will be
- *              sent to the debug log.
- * @param {string} str - The warning message.
+ *              sent to the debug log. 
  * @param {mixed} [args] - Optional arguments to format the message.
  * @returns {int} - Always returns 1, unless there is no previous object.
  */
@@ -361,8 +358,7 @@ varargs int _warn(mixed args...) {
  * @description Provides an informational message, optionally formatted with
  *              arguments. If no object is provided, the message will be sent
  *              to this_body(). If no object is found, the message will be
- *              sent to the debug log.
- * @param {string} str - The informational message.
+ *              sent to the debug log. 
  * @param {mixed} [args] - Optional arguments to format the message.
  * @returns {int} - Always returns 1, unless there is no previous object.
  */
@@ -407,8 +403,7 @@ varargs int _info(mixed args...) {
  * @description Provides a question message, optionally formatted with
  *              arguments. If no object is provided, the message will be sent
  *              to this_body(). If no object is found, the message will be
- *              discarded.
- * @param {string} str - The question message.
+ *              discarded. 
  * @param {mixed} [args] - Optional arguments to format the message.
  * @returns {int} - Always returns 1, unless there is no body object.
  */

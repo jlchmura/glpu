@@ -68,6 +68,11 @@ mixed can_equip(object tp) {
     return call_if(this_object(), "equip_check", tp) || 1 ;
 }
 
+/**
+ * 
+ * @param {PLAYER_OB} tp 
+ * @param slot 
+ */
 mixed equip(object tp, string slot) {
     mixed result ;
     object env = environment() ;
@@ -102,6 +107,11 @@ mixed can_unequip(object tp) {
     return call_if(this_object(), "unequip_check", tp) || 1 ;
 }
 
+/**
+ * 
+ * @param {PLAYER_OB} tp 
+ * @param silent 
+ */
 varargs int unequip(object tp, int silent) {
     mixed result ;
 

@@ -1,3 +1,4 @@
+// @this-object /std/living/player.c
 /**
  * @file /std/living/env.c
  * @description Environment variables and preferences, etc.
@@ -56,8 +57,7 @@ int set_pref(string pref_name, string pref_value) {
 
     if(userp(this_object()))
         this_object()->save_body() ;
-
-    return 1 ;
+    return 1 ; 
 }
 
 varargs string query_pref(string pref_name, string def) {

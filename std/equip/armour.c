@@ -35,6 +35,11 @@ void set_id(mixed ids) {
     add_id(({ "armour", "armor" })) ;
 }
 
+/**
+ * 
+ * @param {PLAYER_OB} tp 
+ * @param slot 
+ */
 int equip(object tp, string slot) {
     if(!::equip(tp, slot)) return 0 ;
 
@@ -43,6 +48,11 @@ int equip(object tp, string slot) {
     return 1 ;
 }
 
+/**
+ * 
+ * @param {PLAYER_OB} tp 
+ * @param silent 
+ */
 int unequip(object tp, int silent) {
     if(!objectp(tp))
         tp = environment() ;

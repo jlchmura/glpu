@@ -248,7 +248,7 @@ private void crash(string crash_message, object command_giver, object current_ob
     if(command_giver) {
         log_file("crashes", "this_player: " +
             file_name(command_giver) + " :: " +
-            query_privs(command_giver) +
+            query_privs(command_giver) + 
             "\n"
         ) ;
     }
@@ -375,8 +375,6 @@ mapping get_mud_stats() {
     return MSSP_D->get_mud_stats() ;
 }
 
-string *DEFAULT_PATH = ({ ":DEFAULT:" }) ;
-
 string *get_include_path(string object_path) {
     string *parts = explode(object_path, "/") ;
     string *include_path = ({ }) ;
@@ -387,11 +385,16 @@ string *get_include_path(string object_path) {
         path1 = "/" + implode(parts[0..<2], "/") + "/" ;
         path2 = "/" + implode(parts[0..<2], "/") + "/include/" ;
 
+#ifndef __LANG_SVC__
         if(directory_exists(path1))
             include_path += ({ path1 }) ;
         if(directory_exists(path2))
             include_path += ({ path2 }) ;
+#else
+        include_path += ({ path1 }) ;
+        include_path += ({ path2 }) ;
+#endif
     }
 
-    return DEFAULT_PATH + include_path ;
+    return ({ ":DEFAULT:" }) + include_path ;
 }

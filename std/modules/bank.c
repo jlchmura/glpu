@@ -16,6 +16,11 @@ void init_bank() {
   add_command("balance", "cmd_balance") ;
 }
 
+/**
+ * 
+ * @param {PLAYER_OB} tp 
+ * @param arg 
+ */
 mixed cmd_balance(object tp, string arg) {
   mixed result ;
 
@@ -25,6 +30,12 @@ mixed cmd_balance(object tp, string arg) {
 
   return "You have " + add_commas(result) + " coins in your account.\n" ;
 }
+
+/**
+ * 
+ * @param {PLAYER_OB} tp 
+ * @param arg 
+ */
 mixed cmd_register(object tp, string arg) {
   mixed result ;
 
@@ -38,6 +49,11 @@ mixed cmd_register(object tp, string arg) {
   return "You have successfully registered an account with the bank.\n" ;
 }
 
+/**
+ * 
+ * @param {PLAYER_OB} tp 
+ * @param str 
+ */
 mixed cmd_deposit(object tp, string str) {
   mixed *config = mud_config("CURRENCY") ;
   int num, conv, have ;
@@ -79,6 +95,11 @@ mixed cmd_deposit(object tp, string str) {
   return "You have deposited " + add_commas(num) + " " + type + " coins.\n" ;
 }
 
+/**
+ * 
+ * @param {PLAYER_OB} tp 
+ * @param str 
+ */
 mixed cmd_withdraw(object tp, string str) {
   mixed *config = mud_config("CURRENCY") ;
   int num, base, have, rate ;

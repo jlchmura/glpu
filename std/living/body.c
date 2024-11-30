@@ -17,7 +17,7 @@
 
 inherit STD_CONTAINER ;
 inherit STD_ITEM ;
-
+ 
 inherit __DIR__ "act" ;
 inherit __DIR__ "advancement" ;
 inherit __DIR__ "alias" ;
@@ -43,6 +43,7 @@ inherit M_LOG ;
 /* Global Variables */
 string *path ;
 nosave string *command_history = ({}) ;
+/** @type {"/std/living/body.c"} */
 object su_body ;
 
 /* Prototypes */
@@ -86,6 +87,7 @@ void rehash_capacity() {
 
 void die() {
     object corpse ;
+    /** @type {ITEM_OB} */
     object ob, next ;
 
     if(!environment())
@@ -96,7 +98,7 @@ void die() {
 
     stop_all_attacks() ;
 
-    if(objectp(su_body)) {
+    if(bodyp(su_body)) {
         exec(su_body, this_object()) ;
         su_body->move(environment()) ;
         su_body->simple_action("$N $vis violently ejected from the body of $o.", this_object()) ;
@@ -167,14 +169,14 @@ varargs int move(mixed ob, int flag) {
 
     return result ;
 }
-
+ 
 void event_remove(object prev) {
     object *all ;
 
     all = all_inventory() ;
-    foreach(object ob in all) {
+    foreach(/** @type {"/std/object/item.c"} */object ob in all) {
         if(ob->prevent_drop()) {
-            ob->remove() ;
+            ob->remove() ; 
         } else {
             if(environment()) {
                 int result = ob->move(environment()) ;
@@ -240,9 +242,11 @@ nomask varargs string *query_command_history(int index, int range) {
 int command_hook(string arg) {
     string verb, err, *cmds = ({}) ;
     string custom, tmp ;
-    object caller, command ;
+    object caller;
+    /** @type {COMMAND_OB} */
+    object command ;
     int i ;
-    mixed result ;
+    mixed result ;    
     object *obs, ob ;
 
     caller = this_body() ;
@@ -263,7 +267,7 @@ int command_hook(string arg) {
     // First let's check in our immediate inventory
     obs = all_inventory() ;
     foreach(ob in obs) {
-        result = ob->evaluate_command(this_object(), verb, arg) ;
+        result = as_commandObject(ob)->evaluate_command(this_object(), verb, arg) ;
         result = evaluate_result(result) ;
         if(result == 1) return 1 ;
     }
@@ -272,7 +276,7 @@ int command_hook(string arg) {
     if(environment()) {
         obs = ({ environment() }) + all_inventory(environment()) - ({ this_object() }) ;
         foreach(ob in obs) {
-            result = ob->evaluate_command(this_object(), verb, arg) ;
+            result = as_commandObject(ob)->evaluate_command(this_object(), verb, arg) ;
             result = evaluate_result(result) ;
             if(result == 1)
                 return 1 ;
@@ -282,7 +286,7 @@ int command_hook(string arg) {
     if(arg) command_history += ({ verb + " " + arg }) ;
     else command_history += ({ verb }) ;
 
-    if(environment() && environment()->valid_exit(verb)) {
+    if(environment() && as_roomObject(environment())->valid_exit(verb)) {
         arg = verb ;
         verb = "go" ;
     }
@@ -315,7 +319,7 @@ int command_hook(string arg) {
                 write(err) ;
                 i++ ;
                 continue ;
-            }
+            } 
 
             return_value = command->main(caller, arg) ;
             i++ ;

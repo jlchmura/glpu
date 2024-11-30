@@ -151,14 +151,15 @@ string query_virtual_master() {
     return virtual_master ;
 }
 
-void on_destruct() {
+void on_destruct() {    
+    /** @type {CONTAINER_OB} */
     object env = environment() ;
 
     if(env) {
         if(!env->ignore_capacity())
             env->adjust_fill(-query_mass()) ;
         if(!env->ignore_mass())
-            env->adjust_mass(query_mass()) ;
+            as_weightObject(env)->adjust_mass(query_mass()) ;
 
         event(env, "gmcp_item_remove", env) ;
     }

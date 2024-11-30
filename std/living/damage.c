@@ -18,6 +18,12 @@ float query_effective_level() ;
 object set_last_damaged_by(object ob) ;
 object set_killed_by(object ob) ;
 
+/**
+ * 
+ * @param {LIVING_OB} victim 
+ * @param damage 
+ * @param type 
+ */
 float deliver_damage(object victim, float damage, string type) {
     if(!victim)
         return 0 ;

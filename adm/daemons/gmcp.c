@@ -21,20 +21,20 @@ void init_gmcp(object who) ;
 
 void setup() {
   set_no_clean() ;
-}
+} 
 
 varargs void broadcast_gmcp(mixed audience, string gmcp_package, mixed arg) {
   object *targets = ({ }) ;
-
+ 
   if(!get_config(__RC_ENABLE_GMCP__) || !gmcp_package || nullp(audience))
     return ;
 
   if(objectp(audience)) {
-    if(audience->is_room()) {
+    if(roomp(audience)) {
       targets = present_players(audience) ;
       if(!sizeof(targets))
         return ;
-    } else if(audience->is_player())
+    } else if(playerp(audience))
       targets += ({ audience }) ;
   } else if(arrayp(audience))
     targets += audience ;
@@ -63,7 +63,7 @@ varargs void send_gmcp(object body, string gmcp_package, mixed arg) {
     if(!has_gmcp(body))
       return ;
   } else if(userp(body) || ghostp(body)) {
-    if(!body->gmcp_enabled())
+    if(!as_player(body)->gmcp_enabled())
       return ;
   } else
     return ;
@@ -77,13 +77,16 @@ varargs void send_gmcp(object body, string gmcp_package, mixed arg) {
   gmcp_module = __DIR__ "modules/gmcp/" + gmcp.package + ".c" ;
 
   if(!file_exists(gmcp_module)) {
+    /** @type {M_GMCP_GMCP} */  
+    object gmcpModuleOb = previous_object() ;
     log_file("system/gmcp", "[%s] Module %s not found [%O]",
-      ctime(),
-      gmcp_module,
-      previous_object()->query_gmcp_module() ?
+      ctime(), 
+      gmcp_module, 
+      gmcpModuleOb->query_gmcp_module() ?
         previous_object(1) :
         previous_object()
     ) ;
+    // ("/std/modules" + "gmcp")    
     return ;
   }
 

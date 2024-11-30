@@ -14,8 +14,8 @@
  * @simul_efun resolve_path
  * @description Resolves a given path relative to the current path, handling
  *              special cases such as user directories and relative paths.
- * @param {string} Current - The current path.
- * @param {string} Next - The next path to resolve.
+ * @param {string} base_dir - The current path.
+ * @param {string} path - The next path to resolve.
  * @returns {string} - The resolved absolute path.
  */
 string resolve_path(string base_dir, string path) {

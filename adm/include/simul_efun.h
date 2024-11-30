@@ -26,7 +26,7 @@ string get_long(object ob) ;
 
 // File: directory
 int assure_dir(string path) ;
-string query_directory(object ob) ;
+varargs string query_directory(object ob) ;
 
 // File: english
 string cap_words(string str) ;
@@ -112,7 +112,10 @@ object *present_players(object room) ;
 object *present_npcs(object room) ;
 object get_living(string name, object room) ;
 object get_player(string name, object room) ;
-object this_body() ;
+/**
+ * @returns {BODY_OB}
+ */
+object this_body();
 object top_environment(object ob) ;
 varargs mixed get_objects(string str, object player, int no_arr) ;
 varargs object find_ob(mixed ob, mixed cont) ;

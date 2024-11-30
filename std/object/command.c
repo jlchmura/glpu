@@ -10,6 +10,13 @@
 
 private nosave mapping commands = ([]) ;
 
+/**
+ * Main command function which will be implemented by the inheriting object.
+ * @param {PLAYER_OB} caller 
+ * @param str 
+ */
+mixed main(object caller, string str);
+
 void add_command(mixed command, mixed action) {
     if(stringp(command)) {
         remove_command(command) ;

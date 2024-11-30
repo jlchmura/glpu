@@ -13,7 +13,8 @@
 
 private nosave mapping modules = ([]) ;
 
-varargs object add_module(string module, mixed args...) {
+varargs object add_module(string module, mixed args...) {    
+    /** @type {M_MOBILE_BASE} */
     object ob ;
     string path ;
     string name ;

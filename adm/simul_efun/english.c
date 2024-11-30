@@ -50,7 +50,7 @@ varargs string cap_significant_words(string str, int title) {
  * @returns {string} - The possessive form of the noun.
  */
 string possessive_noun(mixed ob) {
-    if(objectp(ob)) ob = ob->query_name() ;
+    if(playerp(ob)) ob = ob->query_name() ;
     if(!stringp(ob)) return "its" ;
 
     if(ob[<1] == 's') return ob + "'" ;
@@ -65,7 +65,7 @@ string possessive_noun(mixed ob) {
  * @returns {string} - The possessive form of the proper noun.
  */
 string possessive_proper_noun(mixed ob) {
-    if(objectp(ob)) ob = ob->query_name() ;
+    if(playerp(ob)) ob = ob->query_name() ;
     if(!stringp(ob)) return "its" ;
 
     return ob + "'s" ;
@@ -75,11 +75,11 @@ string possessive_proper_noun(mixed ob) {
  * @simul_efun possessive_pronoun
  * @description Returns the possessive pronoun corresponding to the object's
  *              gender. Defaults to "its" for non-string or unknown gender.
- * @param {mixed} ob - The object or gender string to convert.
+ * @param {LIVING_OB} ob - The object or gender string to convert.
  * @returns {string} - The possessive pronoun.
  */
 string possessive_pronoun(mixed ob) {
-    if(objectp(ob)) ob = ob->query_gender() || "neuter" ;
+    if(playerp(ob)) ob = ob->query_gender() || "neuter" ;
     if(!stringp(ob)) return "its" ;
 
     switch(ob) {
@@ -99,7 +99,7 @@ string possessive_pronoun(mixed ob) {
  */}
 
 string possessive(mixed ob) {
-    if(objectp(ob)) ob = ob->query_gender() || "neuter" ;
+    if(playerp(ob)) ob = ob->query_gender() || "neuter" ;
     if(!stringp(ob)) return "its" ;
 
     switch(ob) {
@@ -119,7 +119,7 @@ string possessive(mixed ob) {
  * @returns {string} - The reflexive pronoun.
  */
 string reflexive(mixed ob) {
-    if(objectp(ob)) ob = ob->query_gender() || "neuter" ;
+    if(playerp(ob)) ob = ob->query_gender() || "neuter" ;
     if(!stringp(ob)) return "itself" ;
 
     switch(ob) {
@@ -139,7 +139,7 @@ string reflexive(mixed ob) {
  * @returns {string} - The objective pronoun.
  */
 string objective(mixed ob) {
-    if(objectp(ob)) ob = ob->query_gender() || "neuter" ;
+    if(playerp(ob)) ob = ob->query_gender() || "neuter" ;
     if(!stringp(ob)) return "it" ;
 
     switch(ob) {
@@ -159,7 +159,7 @@ string objective(mixed ob) {
  * @returns {string} - The subjective pronoun.
  */
 string subjective(mixed ob) {
-    if(objectp(ob)) ob = ob->query_gender() || "neuter" ;
+    if(playerp(ob)) ob = ob->query_gender() || "neuter" ;
     if(!stringp(ob)) return "it" ;
 
     switch(ob) {

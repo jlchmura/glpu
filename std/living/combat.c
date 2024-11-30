@@ -41,7 +41,7 @@ void combat_round() {
 
   if(is_dead())
     return ;
-
+ 
   if(query_hp() <= 0.0) {
     stop_all_attacks() ;
     return ;
@@ -56,7 +56,7 @@ void combat_round() {
 
   enemy = highest_threat() ;
 
-  if(!valid_enemy(enemy))
+  if(!valid_enemy(enemy)) 
     return ;
 
   swing() ;
@@ -71,6 +71,10 @@ void combat_round() {
     next_round() ;
 }
 
+/**
+ * 
+ * @param {"/std/living/combat.c"} victim 
+ */
 int start_attack(object victim) {
   if(!victim)
     return 0 ;
@@ -82,7 +86,6 @@ int start_attack(object victim) {
 
   if(!_seen_enemies[victim])
     _seen_enemies[victim] = 1.0 ;
-
 
   if(!userp())
     module("combat_memory", "add_to_memory", victim) ;
@@ -155,6 +158,11 @@ int next_round() {
   return _next_combat_round ;
 }
 
+/**
+ * 
+ * @param {BODY_OB} enemy 
+ * @param {WEAPON_OB} weapon 
+ */
 public int can_strike(object enemy, mixed weapon) {
   float ac ;
   float chance = mud_config("DEFAULT_HIT_CHANCE") ;
@@ -168,7 +176,7 @@ public int can_strike(object enemy, mixed weapon) {
   string defense_skill ;
   float skill ;
   mapping weapon_info ;
-
+   
   if(nullp(weapon) || objectp(weapon)) {
     weapon_info = query_weapon_info(weapon) ;
     skill_name = weapon_info["skill"] ;
@@ -183,7 +191,7 @@ public int can_strike(object enemy, mixed weapon) {
       defense_skill = "combat.defense.dodge" ;
   } else
     return 0 ;
-
+ 
   skill = query_skill_level(skill_name) ;
 
   if(enemy->query_mp() < 0.0)
@@ -220,6 +228,11 @@ private fail_strike(object enemy, object weapon) {
   tell_down(environment(), messes[2], MSG_COMBAT_MISS, ({ this_object(), enemy })) ;
 }
 
+/**
+ * 
+ * @param {BODY_OB} enemy 
+ * @param {WEAPON_OB} weapon 
+ */
 void strike_enemy(object enemy, object weapon) {
   string wname, wtype ;
   string *messes, mess ;
@@ -284,10 +297,14 @@ void strike_enemy(object enemy, object weapon) {
   add_seen_threat(enemy, dam) ;
 
   if(weapon && weapon->is_weapon())
-    if(stringp(proc = weapon->can_proc()))
+    if(procp(weapon) && stringp(proc = weapon->can_proc()))
       weapon->proc(proc, this_object(), enemy) ;
 }
 
+/**
+ * 
+ * @param {WEAPON_OB} weapon 
+ */
 mapping query_weapon_info(object weapon) {
   string wname, wtype ;
   string skill_name ;
@@ -394,6 +411,9 @@ mapping current_enemies() {
   return copy(_current_enemies) ;
 }
 
+/**
+ * @returns {LIVING_OB}
+ */
 object highest_threat() {
   object *enemies ;
   object highest ;
@@ -482,6 +502,10 @@ void clean_up_enemies() {
   }
 }
 
+/**
+ * 
+ * @param {LIVING_OB} enemy 
+ */
 varargs int valid_enemy(object enemy) {
   if(!same_env_check(this_object(), enemy))
     return 0 ;
@@ -496,8 +520,13 @@ void clean_up_seen_enemies() {
   _seen_enemies = filter(_seen_enemies, (: valid_seen_enemy :)) ;
 }
 
+/**
+ * 
+ * @param {LIVING_OB} enemy 
+ * @param threat 
+ */
 varargs int valid_seen_enemy(object enemy, int threat) {
-  if(!objectp(enemy))
+  if(!livingp(enemy))
     return 0 ;
 
   if(enemy->is_dead())
@@ -567,8 +596,10 @@ float query_defense_amount(string type) {
 }
 
 mapping adjust_protection() {
-  mapping equipment = query_equipped() ;
-  object *obs = values(equipment), ob ;
+  mapping equipment = query_equipped() ;  
+  object *obs = values(equipment);
+  /** @type {EQUIP_OB} */
+  object ob ;
 
   { // Defenses
     _defense = ([]) ;
@@ -661,14 +692,18 @@ string query_weapon_type() {
   return _weapon_type ;
 }
 
+/**
+ * 
+ * @param {LIVING_OB} victim 
+ */
 mixed prevent_combat(object victim) {
   if(victim->query_peaceful(this_object()))
     return "You cannot attack a peaceful creature.\n" ;
 
   if(victim->query_no_combat(this_object()))
     return "You cannot attack that.\n" ;
-
-  if(environment()->query_no_combat(this_object()))
+  
+  if(as_living(environment())->query_no_combat(this_object()))
     return "You cannot attack here.\n" ;
 
   return 1 ;

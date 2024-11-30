@@ -4,7 +4,7 @@
 #include <clothing.h>
 
 int equip(string slot, object tp) ;
-int unequip() ;
+varargs int unequip(object tp, int silent) ;
 public void set_defense(mapping def) ;
 public void add_defense(string type, float amount) ;
 public mapping query_defense() ;

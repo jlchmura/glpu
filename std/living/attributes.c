@@ -51,7 +51,7 @@ varargs int query_attribute(string key, int raw) {
         return null ;
     }
 
-    if(raw)
+    if(raw) 
         return attributes[key] ;
 
     return attributes[key] + query_effective_boon("attribute", key) ;

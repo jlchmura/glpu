@@ -13,15 +13,21 @@ inherit STD_DAEMON ;
 
 object create_body_basic(object user) ;
 object create_body(object user) ;
+/**
+ * 
+ * @param user 
+ * @returns {GHOST_OB}
+ */
 mixed create_ghost(object user) ;
 mixed revive(object ghost, object user) ;
 
 object create_body(string name) {
+    /** @type {PLAYER_OB} */
     object body ;
     string err ;
     string type ;
     string dest ;
-
+ 
     if(!name)
         return 0 ;
 
@@ -56,6 +62,7 @@ object create_body(string name) {
 
 mixed create_ghost(string name) {
     string err ;
+    /** @type {GHOST_OB} */
     object ghost ;
 
     if(!name)
