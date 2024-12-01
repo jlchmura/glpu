@@ -45,7 +45,9 @@ int query_environment_can_hear() {
 // and all of the contents of that object, excluding the object passed as the
 // second argument.
 varargs void receive_up(string msg, object *exclude, int msg_type) {
+    /** @type {ITEM_OB} */
     object env ;
+    /** @type {ITEM_OB*} */
     object *contents ;
     int i ;
 
@@ -73,6 +75,7 @@ varargs void receive_up(string msg, object *exclude, int msg_type) {
 // tell_down() is a function that sends a message to all of the contents of an
 // object, excluding the object passed as the second argument.
 varargs void receive_down(string msg, object *exclude, int msg_type) {
+    /** @type {ITEM_OB*} */
     object *contents ;
     int i ;
 

@@ -157,7 +157,7 @@ nomask void socket_resolve(string host, string addr, int key) {
 
     if(addr) {
         _log(2, "Host resolved: %s (%s)", host, addr) ;
-
+ 
         server["ip"] = addr ;
         server["state"] = HTTP_STATE_CONNECTING ;
         server["host"] = host ;

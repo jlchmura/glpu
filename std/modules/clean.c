@@ -29,6 +29,7 @@ void set_debug_clean(int i) {
 }
 
 /*protected*/ int clean_up(int refs) {
+    /** @type {ITEM_OB*} */
     object *contents ;
     int check ;
 

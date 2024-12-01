@@ -53,7 +53,13 @@ string query_help(object caller) {
   return result ;
 }
 
+/**
+ * 
+ * @param {PLAYER_OB} tp 
+ * @param arg 
+ */
 string resolve_file(object tp, string arg) {
+  /** @type {OBJECT_OB} */
   object ob ;
   string file ;
 
@@ -74,7 +80,13 @@ string resolve_file(object tp, string arg) {
   return append(file, ".c") ;
 }
 
+/**
+ * 
+ * @param {PLAYER_OB} tp 
+ * @param arg 
+ */
 string resolve_dir(object tp, string arg) {
+  /** @type {OBJECT_OB} */
   object ob ;
   string dir ;
 

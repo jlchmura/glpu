@@ -15,8 +15,8 @@
 inherit STD_CMD ;
 inherit M_LOG ;
 
-protected nomask mixed start_report(object tp) ;
-public nomask void finish_report(string text, object tp) ;
+protected nomask mixed start_report(object tp, string subject) ;
+public nomask void finish_report(int status, string file, string temp_file, object tp, string subject) ;
 public nomask void finish_github(mapping response, object tp) ;
 public nomask void get_subject(string subject, object tp) ;
 
@@ -52,6 +52,11 @@ mixed main(object tp, string str) {
     return start_report(tp, str) ;
 }
 
+/**
+ * 
+ * @param {PLAYER_OB} tp 
+ * @param subject 
+ */
 mixed start_report(object tp, string subject) {
     if(!strlen(report_type))
         return "Report type not set.\n" ;
@@ -67,6 +72,11 @@ mixed start_report(object tp, string subject) {
     return 1 ;
 }
 
+/**
+ * 
+ * @param subject 
+ * @param {PLAYER_OB} tp 
+ */
 public nomask void get_subject(string subject, object tp) {
     object editor ;
 

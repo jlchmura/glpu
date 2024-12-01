@@ -32,7 +32,7 @@ protected nomask mixed get_option(string key) ;
 nomask mapping parse_http_request(buffer buf) ;
 nomask mapping parse_http_response(string str) ;
 nomask mapping parse_http_request_line(string str) ;
-nomask mapping parse_headers(string str, int keep_remainder) ;
+nomask mapping parse_headers(mixed str, int keep_remainder) ;
 nomask mapping parse_body(string str, string content_type) ;
 nomask mapping parse_route(string str) ;
 nomask mapping parse_query(string str) ;
