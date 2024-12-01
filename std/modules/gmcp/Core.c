@@ -11,8 +11,8 @@ void setup() {
   ]) ;
 }
 
-void Hello(mapping data) {
-  object prev = previous_object() ;
+void Hello(mapping data) {  
+  object prev = as_player(previous_object()) ;
   string key, value ;
 
   // Core.Hello should only arrive from the login object at the start of the
@@ -28,8 +28,8 @@ void Hello(mapping data) {
   prev->set_gmcp_client(data) ;
 }
 
-void Supports(string submodule, mixed data) {
-  object prev = previous_object(1) || previous_object() ;
+void Supports(string submodule, mixed data) {  
+  object prev = as_player(previous_object(1) || previous_object()) ;
   mapping supports = prev->query_gmcp_supports() ;
 
   switch(submodule) {

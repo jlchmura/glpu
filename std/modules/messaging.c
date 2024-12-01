@@ -92,7 +92,9 @@ varargs void receive_down(string msg, object *exclude, int msg_type) {
 // and all of the contents of that object, excluding the object passed as the
 // second argument.
 varargs void receive_all(string msg, object *exclude, int msg_type) {
+    /** @type {ROOM_OB} */
     object env ;
+    /** @type {ROOM_OB*} */
     object *contents ;
 
     if(objectp(exclude)) exclude = ({ exclude }) ;

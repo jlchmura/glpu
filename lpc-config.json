@@ -1,5 +1,4 @@
-{
-    "traceResolution": true,
+{    
     "driver": {
         "type": "fluffos"
     },

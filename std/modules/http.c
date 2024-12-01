@@ -533,7 +533,7 @@ protected nomask buffer hex_to_binary(string hex) {
 protected nomask void cache_response(string file, mixed response) {
     int fs = file_size(file) ;
     int sz = sizeof(response) ;
-    int max = get_config(__MAX_BYTE_TRANSFER__) ;
+    int max = (int)get_config(__MAX_BYTE_TRANSFER__) ;
     int start ; 
     int result ; 
     int x, y ;
@@ -561,8 +561,8 @@ protected nomask void cache_response(string file, mixed response) {
 
 protected nomask mixed read_cache(string file) {
     mixed response = "" ;
-    int chunk_size = get_config(__MAX_BYTE_TRANSFER__) ;
-    int max = get_config(__MAX_STRING_LENGTH__) ;
+    int chunk_size = (int)get_config(__MAX_BYTE_TRANSFER__) ;
+    int max = (int)get_config(__MAX_STRING_LENGTH__) ;
  
     int curr = 0 ;
     int sz = file_size(file) ;

@@ -332,7 +332,7 @@ mixed convert_for_transaction(object tp, int cost, string from_currency, string 
  * @param currency 
  */
 mixed can_afford(object ob, int cost, string currency) {
-    if(!ob || !objectp(ob)) {
+    if(!ob || !playerp(ob)) {
         return "Invalid object." ;
     }
 

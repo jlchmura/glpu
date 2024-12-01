@@ -3,7 +3,8 @@
 
 inherit __DIR__ "gmcp_module" ;
 
-void Login(string submodule, mapping data) {
+void Login(string submodule, mapping data) {  
+  /** @type {"adm/obj/login"} */
   object prev = previous_object() ;
 
   switch(submodule) {

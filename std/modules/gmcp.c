@@ -189,7 +189,7 @@ public int gmcp_enabled() {
     if(!has_gmcp(this_object()))
         return 0 ;
 
-    if(base_name() == LOGIN_OB)
+    if(base_name(this_object()) == LOGIN_OB)
         return 1 ;
 
     return query_pref("gmcp") != "off" ;
