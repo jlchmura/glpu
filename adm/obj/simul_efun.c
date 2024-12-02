@@ -9,7 +9,7 @@
 // 1. When adding new simul_efuns, prototype them in /adm/obj/simul_efun.h
 // 2. When adding new files to the simuL_efun include list, in that file,
 //    #include <simul_efun.h>
- 
+
 #include "/adm/simul_efun/arrays.c"
 #include "/adm/simul_efun/base64.c" 
 #include "/adm/simul_efun/data.c" 
@@ -43,7 +43,7 @@
 /**
  * Checks if an object is a player
  * @param {STD_PLAYER} ob - The object to check.
- * @returns {ob is PLAYER_OB} 1 if the object is a player object, otherwise 0.
+ * @returns {ob is STD_PLAYER} 1 if the object is a player object, otherwise 0.
  */
 int playerp(object ob) { 
     // TODO: is_player is reference in d/gmcp.c, but doesn't exist?
@@ -62,7 +62,7 @@ object as_player(object ob) {
 /**
  * Checks if an object is a body object.
  * @param ob - The object to check.
- * @returns {ob is BODY_OB} 1 if the object is a body object, otherwise 0.
+ * @returns {ob is STD_BODY} 1 if the object is a body object, otherwise 0.
  */
 int bodyp(object ob) {
     return objectp(ob);
@@ -71,7 +71,7 @@ int bodyp(object ob) {
 /**
  * Checks if an object is a living object.
  * @param ob - The object to check.
- * @returns {ob is LIVING_OB} 1 if the object is a living object, otherwise 0.
+ * @returns {ob is STD_LIVING} 1 if the object is a living object, otherwise 0.
  */
 int livingp(object ob) {
     return objectp(ob);
@@ -89,7 +89,7 @@ object as_living(object ob) {
 /**
  * 
  * @param ob - The object to check.
- * @returns {ob is OBJECT_OB} 1 if the object is a valid object, otherwise 0.
+ * @returns {ob is STD_OBJECT} 1 if the object is a valid object, otherwise 0.
  */
 int objectp(object ob) {
     return efun::objectp(ob);
@@ -98,7 +98,7 @@ int objectp(object ob) {
 /**
  * 
  * @param {STD_ROOM} ob - The object to check.
- * @returns {ob is ROOM_OB} 1 if the object is a room object, otherwise 0. 
+ * @returns {ob is STD_ROOM} 1 if the object is a room object, otherwise 0. 
  */
 int roomp(object ob) {
     return ob->is_room();
@@ -116,7 +116,7 @@ object as_roomObject(object ob) {
 /**
  * 
  * @param {STD_CONTAINER} ob - The object to check.
- * @returns {ob is CONTAINER_OB} 1 if the object is a container object, otherwise 0.
+ * @returns {ob is STD_CONTAINER} 1 if the object is a container object, otherwise 0.
  */
 int containerp(object ob) {
     return ob->is_container();

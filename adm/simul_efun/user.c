@@ -106,7 +106,7 @@ int valid_account(string name) {
 /**
  * @simul_efun ghostp
  * @description Returns 1 if the object is a ghost, 0 if not.
- * @param {object} ob - The object to check.
+ * @param {STD_GHOST} ob - The object to check.
  * @returns {int} - 1 if the object is a ghost, otherwise 0.
  */
 int ghostp(object ob) {
@@ -119,7 +119,7 @@ int ghostp(object ob) {
  * @param {object} ob - The object to check.
  * @returns {int} - 1 if the object is a user object, otherwise 0.
  */
-int linkp(object ob) {
+int linkp(object ob) {    
     return ob->is_user() ;
 }
 

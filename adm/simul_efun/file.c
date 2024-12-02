@@ -166,9 +166,10 @@ string *explode_file(string file) {
         return ({}) ;
     }
 
+    string *lines ;
+    
     catch {
-        string data = read_file(file) ;
-        string *lines ;
+        string data = read_file(file) ;        
 
         if(!data) {
             set_privs(this_object(), old_privs) ;

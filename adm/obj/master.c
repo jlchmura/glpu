@@ -304,6 +304,10 @@ string privs_file(string filename) {
     else return "object" ;
 }
 
+/**
+ * 
+ * @param {STD_PLAYER} ob 
+ */
 string object_name(object ob) {
     if(ob->query_real_name())
         return ob->query_real_name() ;
@@ -322,9 +326,9 @@ string make_path_absolute(string file) {
 
 varargs void log_file(string file, string msg, mixed arg...) {
     int size ;
-    int max_size = percent_of(80, get_config(__MAX_READ_FILE_SIZE__)) ;
-    string *matches ;
-    string source ;
+    int max_size = percent_of(80, (int)get_config(__MAX_READ_FILE_SIZE__)) ;
+    string *matches ; 
+    string source ; 
 
     if(query_privs(previous_object()) == "[open]") return ;
 
@@ -362,11 +366,20 @@ varargs void log_file(string file, string msg, mixed arg...) {
     write_file(source, msg) ;
 }
 
+/**
+ * 
+ * @param {STD_PLAYER} user 
+ * @param config 
+ */
 int save_ed_setup(object user, int config) {
     user->set_ed_setup(config) ;
     return 1 ;
 }
 
+/**
+ * 
+ * @param {STD_PLAYER} user 
+ */
 int retrieve_ed_setup(object user) {
     return user->query_ed_setup() ;
 }

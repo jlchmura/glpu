@@ -45,6 +45,7 @@ void first_admin_login() ;
 
 string name, character ;
 
+/** @type {STD_PLAYER} */
 object body ;
 
 string login_message = parse_tokens(read_file(mud_config("LOGIN_MSG"))) ;
