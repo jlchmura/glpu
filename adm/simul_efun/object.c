@@ -42,7 +42,7 @@ int getoid(object ob) {
  * @description Attempts to locate an object by the given name and returns the
  *              object pointer if found.
  * @param {string} str - The name of the object to locate.
- * @param {PLAYER_OB} player - The player object to use as a reference for
+ * @param {STD_PLAYER} player - The player object to use as a reference for
  *                            searching.
  * @returns {object} - The located object, or 0 if not found.
  */
@@ -435,7 +435,7 @@ object *get_players(mixed names, object room) {
  * @simul_efun this_body
  * @description This is a simul_efun that will return the body of the current
  *              interactive user. It is used as a replacement for this_player().
- * @returns {BODY_OB} - The body of the current calling player.
+ * @returns {STD_BODY} - The body of the current calling player.
  */
 object this_body() {
   return efun::this_player() ;

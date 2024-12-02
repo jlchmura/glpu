@@ -45,7 +45,7 @@ int query_environment_can_hear() {
 // and all of the contents of that object, excluding the object passed as the
 // second argument.
 varargs void receive_up(string msg, object *exclude, int msg_type) {
-    /** @type {ITEM_OB} */
+    /** @type {STD_ITEM} */
     object env ;
     /** @type {ITEM_OB*} */
     object *contents ;
@@ -95,7 +95,7 @@ varargs void receive_down(string msg, object *exclude, int msg_type) {
 // and all of the contents of that object, excluding the object passed as the
 // second argument.
 varargs void receive_all(string msg, object *exclude, int msg_type) {
-    /** @type {ROOM_OB} */
+    /** @type {STD_ROOM} */
     object env ;
     /** @type {ROOM_OB*} */
     object *contents ;

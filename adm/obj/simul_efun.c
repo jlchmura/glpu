@@ -42,7 +42,7 @@
 
 /**
  * Checks if an object is a player
- * @param {PLAYER_OB} ob - The object to check.
+ * @param {STD_PLAYER} ob - The object to check.
  * @returns {ob is PLAYER_OB} 1 if the object is a player object, otherwise 0.
  */
 int playerp(object ob) { 
@@ -53,7 +53,7 @@ int playerp(object ob) {
 /**
  * Casts an object as a player object for language server purposes
  * @param ob - The object to cast as a player object.
- * @returns {PLAYER_OB} 
+ * @returns {STD_PLAYER} 
  */
 object as_player(object ob) {
     return ob;
@@ -80,7 +80,7 @@ int livingp(object ob) {
 /**
  * Casts an object as a living object;
  * @param ob - The object to cast as a living object.
- * @returns {LIVING_OB}  
+ * @returns {STD_LIVING}  
  */
 object as_living(object ob) {
     return ob;
@@ -97,7 +97,7 @@ int objectp(object ob) {
 
 /**
  * 
- * @param {ROOM_OB} ob - The object to check.
+ * @param {STD_ROOM} ob - The object to check.
  * @returns {ob is ROOM_OB} 1 if the object is a room object, otherwise 0. 
  */
 int roomp(object ob) {
@@ -107,7 +107,7 @@ int roomp(object ob) {
 /**
  * 
  * @param ob - The object to cast as a room object.
- * @returns {ROOM_OB}
+ * @returns {STD_ROOM}
  */
 object as_roomObject(object ob) {
     return ob;
@@ -115,7 +115,7 @@ object as_roomObject(object ob) {
 
 /**
  * 
- * @param {CONTAINER_OB} ob - The object to check.
+ * @param {STD_CONTAINER} ob - The object to check.
  * @returns {ob is CONTAINER_OB} 1 if the object is a container object, otherwise 0.
  */
 int containerp(object ob) {
@@ -134,7 +134,7 @@ object as_weightObject(object ob) {
 /**
  * 
  * @param ob - The object to cast as a command object.
- * @returns {COMMAND_OB}
+ * @returns {STD_CMD}
  */
 object as_commandObject(object ob) {
     return ob;

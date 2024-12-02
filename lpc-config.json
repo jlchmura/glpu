@@ -9,7 +9,7 @@
         "player": "/std/living/player.c"
     },
     "libInclude": [
-        "./include"
+        "/include"
     ],
     "include": ["./"],
     "exclude": [

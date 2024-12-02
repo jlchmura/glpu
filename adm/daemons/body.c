@@ -16,13 +16,13 @@ object create_body(object user) ;
 /**
  * 
  * @param user 
- * @returns {GHOST_OB}
+ * @returns {STD_GHOST}
  */
 mixed create_ghost(object user) ;
 mixed revive(object ghost, object user) ;
 
 object create_body(string name) {
-    /** @type {PLAYER_OB} */
+    /** @type {STD_BODY} */
     object body ;
     string err ;
     string type ;
@@ -62,7 +62,7 @@ object create_body(string name) {
 
 mixed create_ghost(string name) {
     string err ;
-    /** @type {GHOST_OB} */
+    /** @type {STD_GHOST} */
     object ghost ;
 
     if(!name)

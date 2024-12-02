@@ -17,8 +17,8 @@ private int _capacity ;
 private nosave int _fill ;
 
 void clean_contents() {
-    object *obs = deep_inventory() ;
-
+    /** @type {STD_STORAGE_OBJECT*} */
+    object *obs = deep_inventory() ;    
     obs->clean_contents() ;
     obs->remove() ;
 }
@@ -88,6 +88,10 @@ int adjust_fill(int x) {
     return 1 ;
 }
 
+/**
+ * 
+ * @param {STD_STORAGE_OBJECT} ob 
+ */
 int can_hold_object(object ob) {
     int use_mass = mud_config("USE_MASS") ;
     int mass = ob->query_mass() ;
@@ -103,7 +107,8 @@ int can_hold_mass(int mass) {
 }
 
 void rehash_capacity() {
-    object ob, *obs ;
+    /** @type {STD_STORAGE_OBJECT} */
+    object ob, *obs;
     int total ;
 
     if(!mud_config("USE_MASS"))

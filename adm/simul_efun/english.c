@@ -75,7 +75,7 @@ string possessive_proper_noun(mixed ob) {
  * @simul_efun possessive_pronoun
  * @description Returns the possessive pronoun corresponding to the object's
  *              gender. Defaults to "its" for non-string or unknown gender.
- * @param {LIVING_OB} ob - The object or gender string to convert.
+ * @param {STD_LIVING} ob - The object or gender string to convert.
  * @returns {string} - The possessive pronoun.
  */
 string possessive_pronoun(mixed ob) {

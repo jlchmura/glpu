@@ -113,7 +113,7 @@ object *present_npcs(object room) ;
 object get_living(string name, object room) ;
 object get_player(string name, object room) ;
 /**
- * @returns {BODY_OB}
+ * @returns {STD_BODY}
  */
 object this_body();
 object top_environment(object ob) ;

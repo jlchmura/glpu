@@ -89,7 +89,7 @@ string query_race() {
 
 /**
  * 
- * @param {PLAYER_OB} ob 
+ * @param {STD_PLAYER} ob 
  * @param args 
  */
 int start_module(object ob, mixed args...) {

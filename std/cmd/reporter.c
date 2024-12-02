@@ -54,7 +54,7 @@ mixed main(object tp, string str) {
 
 /**
  * 
- * @param {PLAYER_OB} tp 
+ * @param {STD_PLAYER} tp 
  * @param subject 
  */
 mixed start_report(object tp, string subject) {
@@ -75,7 +75,7 @@ mixed start_report(object tp, string subject) {
 /**
  * 
  * @param subject 
- * @param {PLAYER_OB} tp 
+ * @param {STD_PLAYER} tp 
  */
 public nomask void get_subject(string subject, object tp) {
     object editor ;

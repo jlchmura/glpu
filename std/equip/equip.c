@@ -32,7 +32,7 @@ string query_slot() {
 
 /**
  * 
- * @param {PLAYER_OB} tp 
+ * @param {STD_PLAYER} tp 
  * @param slot 
  */
 mixed equip(object tp, string slot) {
@@ -65,7 +65,7 @@ mixed can_unequip(object tp) {
 
 /**
  * 
- * @param {PLAYER_OB} tp 
+ * @param {STD_PLAYER} tp 
  * @param silent 
  */
 varargs int unequip(object tp, int silent) {

@@ -66,7 +66,7 @@ int is_edible() {
 
 /**
  * 
- * @param {PLAYER_OB} tp 
+ * @param {STD_PLAYER} tp 
  */
 int consume(object tp) {
     if(!_edible)
@@ -97,7 +97,7 @@ int consume(object tp) {
 
 /**
  * 
- * @param {PLAYER_OB} tp 
+ * @param {STD_PLAYER} tp 
  * @param amount 
  */
 int nibble(object tp, int amount) {

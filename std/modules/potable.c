@@ -66,7 +66,7 @@ int is_potable() {
 
 /**
  * 
- * @param {PLAYER_OB} tp 
+ * @param {STD_PLAYER} tp 
  */
 int drink(object tp) {
     if(!_potable)
@@ -98,7 +98,7 @@ int drink(object tp) {
 
 /**
  * 
- * @param {PLAYER_OB} tp 
+ * @param {STD_PLAYER} tp 
  * @param amount 
  */
 int sip(object tp, int amount) {

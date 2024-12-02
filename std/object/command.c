@@ -12,7 +12,7 @@ private nosave mapping commands = ([]) ;
 
 /**
  * Main command function which will be implemented by the inheriting object.
- * @param {PLAYER_OB} caller 
+ * @param {STD_PLAYER} caller 
  * @param str 
  */
 mixed main(object caller, string str);

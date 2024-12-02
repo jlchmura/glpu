@@ -4,7 +4,7 @@
  * @simul_efun get_short
  * @description Returns the short description of an object, optionally
  *              including extra short descriptions in parentheses.
- * @param {ITEM_OB} ob - The object to get the short description of.
+ * @param {STD_ITEM} ob - The object to get the short description of.
  * @param {int} [extras=1] - Whether to include extra short descriptions.
  *                           Defaults to 1 (include extras).
  * @returns {string} - The short description of the object, including any
@@ -41,7 +41,7 @@ varargs string get_short(object ob, int extras) {
  * @simul_efun get_long
  * @description Returns the long description of an object, optionally
  *              including extra long descriptions.
- * @param {ITEM_OB} ob - The object to get the long description of.
+ * @param {STD_ITEM} ob - The object to get the long description of.
  * @param {int} [extras=1] - Whether to include extra long descriptions.
  *                           Defaults to 1 (include extras).
  * @returns {string} - The long description of the object, including any

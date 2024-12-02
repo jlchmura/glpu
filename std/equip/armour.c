@@ -37,7 +37,7 @@ void set_id(mixed ids) {
 
 /**
  * 
- * @param {PLAYER_OB} tp 
+ * @param {STD_PLAYER} tp 
  * @param slot 
  */
 int equip(object tp, string slot) {
@@ -50,7 +50,7 @@ int equip(object tp, string slot) {
 
 /**
  * 
- * @param {PLAYER_OB} tp 
+ * @param {STD_PLAYER} tp 
  * @param silent 
  */
 int unequip(object tp, int silent) {

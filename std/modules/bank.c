@@ -18,7 +18,7 @@ void init_bank() {
 
 /**
  * 
- * @param {PLAYER_OB} tp 
+ * @param {STD_PLAYER} tp 
  * @param arg 
  */
 mixed cmd_balance(object tp, string arg) {
@@ -33,7 +33,7 @@ mixed cmd_balance(object tp, string arg) {
 
 /**
  * 
- * @param {PLAYER_OB} tp 
+ * @param {STD_PLAYER} tp 
  * @param arg 
  */
 mixed cmd_register(object tp, string arg) {
@@ -51,7 +51,7 @@ mixed cmd_register(object tp, string arg) {
 
 /**
  * 
- * @param {PLAYER_OB} tp 
+ * @param {STD_PLAYER} tp 
  * @param str 
  */
 mixed cmd_deposit(object tp, string str) {
@@ -97,7 +97,7 @@ mixed cmd_deposit(object tp, string str) {
 
 /**
  * 
- * @param {PLAYER_OB} tp 
+ * @param {STD_PLAYER} tp 
  * @param str 
  */
 mixed cmd_withdraw(object tp, string str) {

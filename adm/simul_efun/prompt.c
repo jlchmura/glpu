@@ -3,7 +3,7 @@
 /**
  * 
  * @param input 
- * @param {BODY_OB} body 
+ * @param {STD_BODY} body 
  * @param attempts 
  * @param count 
  * @param cb 
@@ -197,7 +197,7 @@ private void _prompt_colour(string input, string prompt, object body, mixed *cb)
 /**
  * 
  * @param input 
- * @param {PLAYER_OB} body 
+ * @param {STD_PLAYER} body 
  * @param cb 
  * @param prompt 
  */

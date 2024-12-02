@@ -20,7 +20,7 @@ object set_killed_by(object ob) ;
 
 /**
  * 
- * @param {LIVING_OB} victim 
+ * @param {STD_LIVING} victim 
  * @param damage 
  * @param type 
  */

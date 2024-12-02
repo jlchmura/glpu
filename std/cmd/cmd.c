@@ -55,11 +55,11 @@ string query_help(object caller) {
 
 /**
  * 
- * @param {PLAYER_OB} tp 
+ * @param {STD_PLAYER} tp 
  * @param arg 
  */
 string resolve_file(object tp, string arg) {
-  /** @type {OBJECT_OB} */
+  /** @type {STD_OBJECT} */
   object ob ;
   string file ;
 
@@ -82,11 +82,11 @@ string resolve_file(object tp, string arg) {
 
 /**
  * 
- * @param {PLAYER_OB} tp 
+ * @param {STD_PLAYER} tp 
  * @param arg 
  */
 string resolve_dir(object tp, string arg) {
-  /** @type {OBJECT_OB} */
+  /** @type {STD_OBJECT} */
   object ob ;
   string dir ;
 

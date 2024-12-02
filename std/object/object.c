@@ -152,7 +152,7 @@ string query_virtual_master() {
 }
 
 void on_destruct() {    
-    /** @type {CONTAINER_OB} */
+    /** @type {STD_CONTAINER} */
     object env = environment() ;
 
     if(env) {

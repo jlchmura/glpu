@@ -51,7 +51,7 @@ mixed main(object tp, string arg) {
 /**
  * @function condition_check
  * @description Checks the conditions for using the ability.
- * @param {PLAYER_OB} tp - The player to check the conditions for.
+ * @param {STD_PLAYER} tp - The player to check the conditions for.
  * @param {string} arg - The argument to check the conditions for.
  * @returns {int} 1 if the conditions are met, 2 if the conditions are not met, 0 if the conditions are unknown.
  */
@@ -84,7 +84,7 @@ string query_ability_type() {
 /**
  * @function local_target
  * @description Finds a local target for the ability.
- * @param {PLAYER_OB} tp - The player to find the target for.
+ * @param {STD_PLAYER} tp - The player to find the target for.
  * @param {string} arg - The argument to find the target for.
  * @param {function} f - The function to check the target for.
  * @returns {object} The target if found, 0 if not found.
@@ -130,7 +130,7 @@ varargs object local_target(object tp, string arg, function f) {
 
 /**
  * 
- * @param {PLAYER_OB} tp 
+ * @param {STD_PLAYER} tp 
  * @param arg 
  */
 int cost_check(object tp, string arg) {
@@ -155,7 +155,7 @@ int cost_check(object tp, string arg) {
 /**
  * @function apply_cost
  * @description Applies the cost of the ability to the player.
- * @param {PLAYER_OB} tp - The player to apply the cost to.
+ * @param {STD_PLAYER} tp - The player to apply the cost to.
  * @param {string} arg - The argument to apply the cost to.
  */
 void apply_cost(object tp, string arg) {
@@ -201,7 +201,7 @@ private string find_cooldown_key(string arg) {
 /**
  * @function cooldown_check
  * @description Checks the cooldown for the ability.
- * @param {PLAYER_OB} tp - The player to check the cooldown for.
+ * @param {STD_PLAYER} tp - The player to check the cooldown for.
  * @param {string} arg - The argument to check the cooldown for.
  * @returns {int} 1 if the cooldown is ready, 0 if the cooldown is not ready, 2 if the cooldown is unknown.
  */
@@ -225,7 +225,7 @@ int cooldown_check(object tp, string arg) {
 /**
  * @function apply_cooldown
  * @description Applies the cooldown for the ability.
- * @param {PLAYER_OB} tp - The player to apply the cooldown to.
+ * @param {STD_PLAYER} tp - The player to apply the cooldown to.
  * @param {string} arg - The argument to apply the cooldown to.
  */
 void apply_cooldown(object tp, string arg) {

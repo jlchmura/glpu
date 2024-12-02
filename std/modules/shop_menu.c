@@ -39,7 +39,7 @@ void init_shop() {
  */
 varargs void add_menu_item(string type, string file, int cost) {
     class Menu item ;
-    /** @type {ITEM_OB} */
+    /** @type {STD_ITEM} */
     object ob ;
     string err ;
 
@@ -116,12 +116,12 @@ mixed cmd_menu(object tp, string str) {
 
 /**
  * @description Player command to buy an item.
- * @param {PLAYER_OB} tp - The player object.
+ * @param {STD_PLAYER} tp - The player object.
  * @param {string} str - The item to buy.
  * @return {mixed} - The result of the buy command.
  */
 mixed cmd_buy(object tp, string str) {
-    /** @type {ITEM_OB} */
+    /** @type {STD_ITEM} */
     object ob ;
     string file ;
     string err ;

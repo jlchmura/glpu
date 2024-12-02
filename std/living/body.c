@@ -87,7 +87,7 @@ void rehash_capacity() {
 
 void die() {
     object corpse ;
-    /** @type {ITEM_OB} */
+    /** @type {STD_ITEM} */
     object ob, next ;
 
     if(!environment())
@@ -243,7 +243,7 @@ int command_hook(string arg) {
     string verb, err, *cmds = ({}) ;
     string custom, tmp ;
     object caller;
-    /** @type {COMMAND_OB} */
+    /** @type {STD_CMD} */
     object command ;
     int i ;
     mixed result ;    

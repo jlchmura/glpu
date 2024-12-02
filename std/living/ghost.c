@@ -50,7 +50,7 @@ void setup_body() {
 }
 
 int revive(string str) {
-    /** @type {PLAYER_OB} */
+    /** @type {STD_PLAYER} */
     object body ;
     string name = query_privs() ;
 

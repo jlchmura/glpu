@@ -160,8 +160,8 @@ int next_round() {
 
 /**
  * 
- * @param {BODY_OB} enemy 
- * @param {WEAPON_OB} weapon 
+ * @param {STD_BODY} enemy 
+ * @param {STD_WEAPON} weapon 
  */
 public int can_strike(object enemy, mixed weapon) {
   float ac ;
@@ -230,8 +230,8 @@ private fail_strike(object enemy, object weapon) {
 
 /**
  * 
- * @param {BODY_OB} enemy 
- * @param {WEAPON_OB} weapon 
+ * @param {STD_BODY} enemy 
+ * @param {STD_WEAPON} weapon 
  */
 void strike_enemy(object enemy, object weapon) {
   string wname, wtype ;
@@ -303,7 +303,7 @@ void strike_enemy(object enemy, object weapon) {
 
 /**
  * 
- * @param {WEAPON_OB} weapon 
+ * @param {STD_WEAPON} weapon 
  */
 mapping query_weapon_info(object weapon) {
   string wname, wtype ;
@@ -412,7 +412,7 @@ mapping current_enemies() {
 }
 
 /**
- * @returns {LIVING_OB}
+ * @returns {STD_LIVING}
  */
 object highest_threat() {
   object *enemies ;
@@ -504,7 +504,7 @@ void clean_up_enemies() {
 
 /**
  * 
- * @param {LIVING_OB} enemy 
+ * @param {STD_LIVING} enemy 
  */
 varargs int valid_enemy(object enemy) {
   if(!same_env_check(this_object(), enemy))
@@ -522,7 +522,7 @@ void clean_up_seen_enemies() {
 
 /**
  * 
- * @param {LIVING_OB} enemy 
+ * @param {STD_LIVING} enemy 
  * @param threat 
  */
 varargs int valid_seen_enemy(object enemy, int threat) {
@@ -598,7 +598,7 @@ float query_defense_amount(string type) {
 mapping adjust_protection() {
   mapping equipment = query_equipped() ;  
   object *obs = values(equipment);
-  /** @type {EQUIP_OB} */
+  /** @type {STD_EQUIP} */
   object ob ;
 
   { // Defenses
@@ -694,7 +694,7 @@ string query_weapon_type() {
 
 /**
  * 
- * @param {LIVING_OB} victim 
+ * @param {STD_LIVING} victim 
  */
 mixed prevent_combat(object victim) {
   if(victim->query_peaceful(this_object()))

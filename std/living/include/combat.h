@@ -17,7 +17,7 @@ int seen_enemy(object victim) ;
 int current_enemy(object victim) ;
 mapping current_enemies() ;
 /**
- * @returns {LIVING_OB}
+ * @returns {STD_LIVING}
  */
 object highest_threat() ;
 object lowest_threat() ;

@@ -32,7 +32,7 @@ varargs mixed handle_transaction(object tp, int cost) {
 
 /**
  * 
- * @param {PLAYER_OB} tp 
+ * @param {STD_PLAYER} tp 
  * @param cost 
  */
 mixed complex_transaction(object tp, int cost) {
@@ -175,7 +175,7 @@ private mixed *format_return_currency(mapping m) {
 
 /**
  * 
- * @param {PLAYER_OB} tp 
+ * @param {STD_PLAYER} tp 
  * @param transaction_result 
  */
 mixed reverse_transaction(object tp, mixed transaction_result) {
@@ -241,7 +241,7 @@ string format_return_currency_string(mixed *currency_array) {
 
 /**
  * Check if the player has enough funds
- * @param {PLAYER_OB} tp 
+ * @param {STD_PLAYER} tp 
  * @param amount 
  */
 private mixed check_funds(object tp, int amount) { // Remove currency parameter
@@ -254,7 +254,7 @@ private mixed check_funds(object tp, int amount) { // Remove currency parameter
 
 /**
  * Check if the player can handle the change in capacity
- * @param {PLAYER_OB} tp 
+ * @param {STD_PLAYER} tp 
  * @param currency 
  * @param amount 
  */
@@ -271,8 +271,8 @@ private mixed check_capacity(object tp, string currency, int amount) {
 
 /**
  * Transfer funds from one object to another
- * @param {PLAYER_OB} from 
- * @param {PLAYER_OB} to 
+ * @param {STD_PLAYER} from 
+ * @param {STD_PLAYER} to 
  * @param currency 
  * @param amount 
  */
@@ -296,7 +296,7 @@ private mixed transfer_funds(object from, object to, string currency, int amount
 
 /**
  * Convert currency for a transaction
- * @param {PLAYER_OB} tp 
+ * @param {STD_PLAYER} tp 
  * @param cost 
  * @param from_currency 
  * @param to_currency 
@@ -327,7 +327,7 @@ mixed convert_for_transaction(object tp, int cost, string from_currency, string 
 
 /**
  * Function to check if an object can afford a transaction
- * @param {PLAYER_OB} ob 
+ * @param {STD_PLAYER} ob 
  * @param cost 
  * @param currency 
  */
