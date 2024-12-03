@@ -24,6 +24,7 @@ mapping inbox ;
 mapping outbox ;
 int curr_in_msg, curr_out_msg, in_outbox ;
 int in_start_index, in_end_index, out_start_index, out_end_index ;
+/** @type {OBJ_SECURITY_EDITOR} */
 object s_editor ;
 
 protected void main_menu() ;
@@ -48,6 +49,10 @@ void setup() {
     add_init((: client :)) ;
 }//END create
 
+/**
+ * 
+ * @param {STD_PLAYER} tp 
+ */
 void client(object tp) {
     int i ;
 
@@ -602,7 +607,7 @@ protected void read_message(int num) {
         curr_out_msg = num ;
         save_mailbox() ;
         resync_mailbox() ;
-        environment()->page(ret, assemble_call_back("done_reading"), 0) ;
+        as_player(environment())->page(ret, assemble_call_back("done_reading"), 0) ;
         return ;
     } else {
         ret += "\nFROM:    " + inbox[num]["FROM"] + "\n" ;
@@ -616,7 +621,7 @@ protected void read_message(int num) {
         curr_in_msg = num ;
         save_mailbox() ;
         resync_mailbox() ;
-        environment()->page(ret, assemble_call_back("done_reading"), 0) ;
+        as_player(environment())->page(ret, assemble_call_back("done_reading"), 0) ;
         return ;
     }
 }

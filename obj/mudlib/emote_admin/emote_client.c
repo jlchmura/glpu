@@ -17,6 +17,7 @@
 
 inherit STD_ITEM ;
 
+/** @type {SOUL_D} */
 object soul_d ;
 nosave string tmp_emote_targeted_name ;
 nosave string tmp_emote_untargeted_name ;
@@ -123,7 +124,7 @@ nomask void get_emote_name(string arg) {
 nomask void targeted_or_not(string arg) {
     int i ;
     string tmp = "" ;
-    string existing_emotes = soul_d->query_emotes() ;
+    string* existing_emotes = soul_d->query_emotes() ;
 
     if(!arg || arg == "") {
         tell_object(this_body(), "\nPlease enter 't', 'u' or 'b'.\n"+

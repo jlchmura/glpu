@@ -35,6 +35,11 @@ void setup() {
   set_proc_chance(100.0) ;
 }
 
+/**
+ * 
+ * @param {STD_BODY} attacker 
+ * @param {STD_LIVING} defender 
+ */
 void bite(object attacker, object defender) {
   if(attacker->can_strike(defender)) {
     float damage = percent_of(25.0, query_dc()) ;

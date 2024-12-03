@@ -19,6 +19,11 @@ void decay(int it) ;
 
 int pc_corpse, npc_corpse ;
 
+/**
+ * 
+ * @param {STD_BODY} dead 
+ * @param {STD_BODY} killer 
+ */
 void setup_corpse(object dead, object killer) {
     killer_name = killer ? killer->query_name() : "unknown" ;
     dead_name = dead->query_name() ;

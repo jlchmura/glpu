@@ -67,12 +67,16 @@ void set_up(string type, int num) {
     set_mass(num) ;
 }
 
+/**
+ * 
+ * @param {STD_CONTAINER} dest 
+ */
 int move(mixed dest) {
     object env = environment() ;
     int result ;
 
     if(!objectp(dest))
-        dest = load_object(dest) ;
+        dest = load_object((string)dest) ;
 
     if(mud_config("USE_MASS")) {
         if(!dest->ignore_capacity()) {
