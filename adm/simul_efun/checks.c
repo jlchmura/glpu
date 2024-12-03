@@ -136,3 +136,21 @@ int armourp(object ob) {
 int clothingp(object ob) {
     return ob->is_clothing();
 }
+
+/**
+ * 
+ * @param ob 
+ * @returns {STD_STORAGE_OBJECT} ob cast as a storage object.
+ */
+object as_storageObject(object ob) {
+    return ob;
+}
+
+/**
+ * Checks if the specified argument is a zone object.
+ * @param {mixed} ob Argument to check
+ * @returns {ob is STD_ZONE} 1 if the object is a zone object, otherwise 0.
+ */
+int zonep(mixed ob) {
+    return objectp(ob) && /** @type {STD_ZONE} */(ob)->is_zone();
+}

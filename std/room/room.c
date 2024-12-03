@@ -95,10 +95,10 @@ mapping gmcp_room_info(object who) {
   return result ;
 }
 
-string set_room_environment(string environment) { room_environment = environment ; }
+string set_room_environment(string environment) { return room_environment = environment ; }
 string query_room_environment() { return room_environment ; }
 
-int set_room_colour(int colour) { room_colour = colour ; }
+int set_room_colour(int colour) { return room_colour = colour ; }
 int query_room_colour() { return room_colour ; }
 
 void set_room_size(int *size) {
@@ -176,9 +176,9 @@ void remove_custom_gmcp(string key) {
 
 mapping query_custom_gmcp() { return custom_gmcp ; }
 
-string set_room_type(string type) { room_type = type ; }
-string set_room_subtype(string subtype) { room_subtype = subtype ; }
-string set_room_icon(string icon) { room_icon = icon ; }
+string set_room_type(string type) { return room_type = type ; }
+string set_room_subtype(string subtype) { return room_subtype = subtype ; }
+string set_room_icon(string icon) { return room_icon = icon ; }
 
 string query_room_type() { return room_type ; }
 string query_room_subtype() { return room_subtype ; }

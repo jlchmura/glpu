@@ -31,6 +31,7 @@ void init_storage_room() {
 }
 
 object store() {
+    /** @type {STD_STORAGE_OBJECT} */
     object store ;
     string org, file ;
 
@@ -106,6 +107,7 @@ mixed cmd_list(object tp, string arg) {
 }
 
 mixed cmd_store(object tp, string arg) {
+    /** @type {STD_ITEM} */
     object ob, *obs ;
     string out = "" ;
     int result ;
@@ -144,6 +146,7 @@ mixed cmd_store(object tp, string arg) {
 }
 
 mixed cmd_take(object tp, string arg) {
+    /** @type {STD_ITEM} */
     object ob, *obs ;
     string out = "" ;
     int result ;
@@ -184,6 +187,6 @@ mixed cmd_take(object tp, string arg) {
 void destructing() {
     object *obs = clones(STD_STORAGE_OBJECT) ;
 
-    obs = filter(obs, (: $1->query_link() == file_name() :)) ;
-    filter(obs, (: $1->remove() :)) ;
+    obs = filter(obs, (: as_storageObject($1)->query_link() == file_name() :)) ;
+    filter(obs, (: as_storageObject($1)->remove() :)) ;
 }

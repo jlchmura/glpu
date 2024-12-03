@@ -12,6 +12,7 @@
 
 string find_path(string path) ;
 
+/** @type {STD_ZONE} */
 private nosave object zone ;
 
 void set_zone(mixed z) {
@@ -23,7 +24,7 @@ void set_zone(mixed z) {
   if(!objectp(z))
     error("Invalid zone object: " + z) ;
 
-  if(!z->is_zone())
+  if(!zonep(z))
     error("Invalid zone object: " + z) ;
 
   zone = z ;
@@ -31,7 +32,7 @@ void set_zone(mixed z) {
 }
 
 string query_zone_name() {
-  if(!objectp(zone))
+  if(!zonep(zone))
     return "Unknown" ;
 
   return zone->query_zone_name() ;

@@ -250,12 +250,12 @@ void reset_doors() {
       continue ;
     }
 
-    if(other_room_file = query_exit(dir)) {
+    if(other_room_file = query_exit(dir)) {      
       object other_room ;
 
       other_room = find_object(other_room_file) ;
 
-      if(!objectp(other_room))
+      if(!roomp(other_room))
         continue ;
 
       foreach(string other_dir in other_room->query_exit_ids()) {
