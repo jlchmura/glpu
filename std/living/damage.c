@@ -20,7 +20,7 @@ object set_killed_by(object ob) ;
 
 /**
  * 
- * @param {STD_LIVING} victim 
+ * @param {STD_BODY} victim 
  * @param damage 
  * @param type 
  */
@@ -37,7 +37,7 @@ float deliver_damage(object victim, float damage, string type) {
 /**
  * @description Calculates the damage received by the victim based on the attacker's level,
  *              defense amount, and a damage level modifier.
- * @param {object} attacker - The attacker object.
+ * @param {STD_BODY} attacker - The attacker object.
  * @param {float} damage - The initial damage value.
  * @param {string} type - The type of damage.
  * @returns {float} - The final damage after applying reductions and level-based modifications.

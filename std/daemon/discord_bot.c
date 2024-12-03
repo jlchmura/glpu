@@ -367,13 +367,13 @@ void discord_send_identify() {
             "token": token,
             "intents": intents,
             "properties": ([
-                "os": "linux",
+                "os": "linux", 
                 "browser": get_config(__MUD_NAME__),
                 "device": "FluffOS"
             ])
         ])
     ])) ;
-
+ 
     _log(2, "Sending Identify") ;
 
     result = websocket_message(WS_TEXT_FRAME, identify_payload) ;

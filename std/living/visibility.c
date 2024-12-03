@@ -9,6 +9,7 @@
  * 2024-07-23 - Gesslar - Created
  */
 
+
 int can_see(object target) {
     if(!objectp(target))
         return 0 ;

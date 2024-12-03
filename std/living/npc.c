@@ -60,7 +60,6 @@ int force_me(string cmd) {
     return command(cmd) ;
 }
 
-int player_check() ;
 void start_heart_beat() {
     if(player_check())
         set_heart_beat(mud_config("DEFAULT_HEART_RATE")) ;

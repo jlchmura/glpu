@@ -83,6 +83,7 @@ void greet(int gmcp_auth) {
 
 void gmcp_authenticated(string name, string char) {
   int reconnecting = 0 ;
+  /** @type {STD_BODY} */
   object old_body ;
 
   if(old_body = find_player(char)) {

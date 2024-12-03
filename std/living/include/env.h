@@ -1,7 +1,7 @@
 #ifndef __ENV_H__
 #define __ENV_H__
 
-int init_env() ;
+void init_env() ;
 int set_env(string var_name, string var_value) ;
 varargs mixed query_env(string var_name, mixed def) ;
 mapping list_env() ;

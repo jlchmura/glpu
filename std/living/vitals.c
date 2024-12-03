@@ -16,8 +16,6 @@
 #include <module.h>
 #include <combat.h>
 
-void update_regen_interval() ;
-
 private nomask float hp, max_hp, sp, max_sp, mp, max_mp ;
 private nomask int dead = false ;
 private nomask nosave int tick ;

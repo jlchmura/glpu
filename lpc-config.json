@@ -31,6 +31,7 @@
         {"__MAX_BYTE_TRANSFER__": "1"},
         {"__MAX_STRING_LENGTH__": "1"},
         {"__MAX_READ_FILE_SIZE__": "1"},
-        {"EESUCCESS": "1"}
+        {"EESUCCESS": "1"},
+        {"__MUD_NAME__": "1"}
     ]
 }

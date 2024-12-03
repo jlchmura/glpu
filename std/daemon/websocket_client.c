@@ -22,7 +22,7 @@ inherit STD_DAEMON ;
 inherit M_HTTP ;
 
 // Functions
-private nomask string random_string() ;
+private nomask string random_string(int length) ;
 protected nomask mapping websocket_connect(string url) ;
 
 private nomask void process_handshake(buffer buf) ;
@@ -1147,7 +1147,7 @@ protected nomask string random_string(int length) {
     return result ;
 }
 
- /**
+/**
  * Shuts down the WebSocket connection gracefully.
  */
 void shutdown() {

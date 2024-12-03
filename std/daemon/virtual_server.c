@@ -11,6 +11,7 @@ protected object generate_object(string path) ;
 
 object compile_object(string path) {
     string subzone, subzone_path ;
+    /** @type {STD_VIRTUAL_SERVER} */
     object subzone_daemon ;
     string *current_dir ;
     string *path_parts ;

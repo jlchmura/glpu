@@ -21,11 +21,11 @@ public object wielded_in(string slot) { return wielded[slot] || null ; }
 int equip(object ob, string slot) {
     string type ;
 
-    if(ob->is_weapon())
+    if(weaponp(ob))
         type = "weapon" ;
-    else if(ob->is_armour())
+    else if(armourp(ob))
         type = "armour" ;
-    else if(ob->is_clothing())
+    else if(clothingp(ob))
         type = "clothing" ;
     else
         return 0 ;
@@ -81,7 +81,7 @@ mixed equipped(object ob) {
     if(!ob)
         return 0 ;
 
-    if(ob->is_weapon()) {
+    if(weaponp(ob)) {
         s = filter(keys(wielded), (: $2 == $(ob) :)) ;
         if(sizeof(s))
             return s ;
@@ -99,7 +99,7 @@ int unequip(mixed ob) {
     mapping m ;
 
     if(objectp(ob)) {
-        if(ob->is_weapon()) {
+        if(weaponp(ob)) {
             m = wielded ;
             m = filter(m, (: $2 != $(ob) :)) ;
             wielded = m ;
@@ -129,7 +129,7 @@ mixed can_equip(mixed ob, string slot) {
         return 0 ;
 
     if(objectp(ob)) {
-        if(ob->is_weapon()) {
+        if(weaponp(ob)) {
             int hands = ob->query_hands() ;
             string *all_weapon_slots = query_weapon_slots() ;
             mapping w = filter(wielded, (: objectp($2) :)) ;

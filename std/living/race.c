@@ -17,6 +17,7 @@ private nomask nosave string _race ;
 private string gender ;
 
 public string set_race(string race) {
+    /** @type {"/std/modules/mobile/race/race.c"} */
     object module ;
 
     if(!file_exists(racial_bodies+"/"+race+".c")) {

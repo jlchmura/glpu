@@ -37,6 +37,7 @@ private nosave string *_combat_memory = ({ }) ;
 private nosave int _no_combat = 0 ;
 
 void combat_round() {
+  /** @type {STD_BODY} */
   object enemy ;
 
   if(is_dead())

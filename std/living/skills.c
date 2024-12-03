@@ -199,9 +199,9 @@ mapping query_skills() {
  * @param {mapping} skills - The skills of the living object
  */
 
-void set_skills(mapping s) {
-    if(!mapp(s)) return ;
-    skills = copy(s) ;
+void set_skills(mapping skills) {
+    if(!mapp(skills)) return ;
+    skills = copy(skills) ;
 }
 
 /**
